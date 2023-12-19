@@ -1,0 +1,11 @@
+id: dcac63dc-0bf6-41d4-8e9e-82c14157e5c2
+timestamp: 2023-12-19T16:33:31.555Z
+source: TAP-GUI
+username: developer-01@example.com
+accelerator:
+  name: node-express
+fragments:
+  - name: tap-workload
+options:
+  projectName: test-app
+  includeTap: true

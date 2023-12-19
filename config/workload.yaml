@@ -1,0 +1,15 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: test-app
+  namespace: default
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
+    app.kubernetes.io/part-of: test-app
+spec:
+  source:
+    git:
+      url: https://github.com/giovannibaratta/tap-test-app
+      ref:
+        branch: main
