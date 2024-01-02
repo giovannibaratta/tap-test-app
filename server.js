@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello from the server. This is a new commit!!!!!');
+app.get("/", (req, res) => {
+  res.send("A new message");
 });
 
-app.get('/health', (req, res) => {
+app.get("/health", (req, res) => {
   res.sendStatus(200);
 });
 
