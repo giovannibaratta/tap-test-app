@@ -1,5 +1,14 @@
+var cors = require('cors')
 const express = require("express");
 const app = express();
+
+var corsOptions = {
+  origin: 'https://tap-gui.app.h2o-2-21094.h2o.vmware.com',
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
+
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
