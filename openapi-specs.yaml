@@ -1,0 +1,16 @@
+# These openapi specs must be converted to json and set in server.js
+# The apis are exposed as an endpoint and used by TAP auto-register features.
+apiVersion: apis.apps.tanzu.vmware.com/v1alpha1
+kind: APIDescriptor
+metadata:
+  name: test-app
+spec:
+  type: openapi
+  description: A sample APIDescriptor to validate package installation successful
+  system: test-installation
+  owner: test-installation
+  location:
+    apiSpec:
+      path: "/api"
+    server:
+      url: https://test-app.dev-ns1.app.h2o-2-21094.h2o.vmware.com/

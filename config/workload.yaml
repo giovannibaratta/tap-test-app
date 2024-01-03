@@ -5,9 +5,24 @@ metadata:
   namespace: default
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/has-tests: "false"
     app.kubernetes.io/part-of: test-app
+    # Enable API auto-registration
+    apis.apps.tanzu.vmware.com/register-api: "true"
 spec:
+  params:
+  # Instruct the supply chain to skip the image scan
+  # This is a custom made configuration
+  - name: scanning_image_policy
+    value: ""
+  # Configuration for the TAP API auto-registration
+  - name: api_descriptor
+    value:
+     type: openapi
+       path: "/api"  # Endpoint used by the application to expose the OpenApi specs
+     owner: team-a
+     system: system-a
+     description: "A set of API test endpoints"
   source:
     git:
       url: https://github.com/giovannibaratta/tap-test-app
