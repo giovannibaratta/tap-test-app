@@ -10,6 +10,14 @@ app.get("/health", (req, res) => {
   res.sendStatus(200);
 });
 
+app.get("/api", (req, res) => {
+  res.json(apis)
+})
+
+app.listen(port, () => {
+  console.log(`app listening at http://localhost:${port}`);
+});
+
 const apis = {
   "openapi": "3.0.2",
   "info": {
@@ -33,14 +41,23 @@ const apis = {
           }
         }
       }
+    },
+    "/api": {
+      "get": {
+        "operationId": "getApi",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
-
-app.get("/api", (req, res) => {
-  res.json(apis)
-})
-
-app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`);
-});
