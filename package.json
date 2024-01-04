@@ -10,5 +10,8 @@
   "dependencies": {
     "express": "^4.18.1",
     "cors": "2.8.5"
+  },
+  "devDependencies": {
+    "@techdocs/cli": "1.8.0"
   }
 }
